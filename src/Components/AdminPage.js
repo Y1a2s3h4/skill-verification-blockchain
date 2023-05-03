@@ -125,7 +125,7 @@ function AdminPage() {
       </label>
       <br />
       <label htmlFor="uploadfile" className="fw-bold text-start w-100">
-        File Upload:{" "}
+        File Upload:{}
       </label>
       <label
         className="text-start w-100 fw-bold my-2 position-relative rounded border border-1"
@@ -153,20 +153,22 @@ function AdminPage() {
         <i className="bi bi-plus fs-5"></i>
       </button>
       <br />
-      <div
-        className={`alert ${
-          status === "Skill verified" ? "alert-success" : "alert-warning"
-        } alert-dismissible fade show`}
-        role="alert"
-      >
-        <strong>{status}</strong>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="alert"
-          aria-label="Close"
-        ></button>
-      </div>
+      {!!status && (
+        <div
+          className={`alert ${
+            status === "Skill verified" ? "alert-success" : "alert-warning"
+          } alert-dismissible fade show`}
+          role="alert"
+        >
+          <strong>{status}</strong>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="alert"
+            aria-label="Close"
+          ></button>
+        </div>
+      )}
     </div>
   );
 }

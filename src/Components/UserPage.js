@@ -149,20 +149,24 @@ function UserPage() {
         <i className="bi bi-plus fs-5"></i>
       </button>
       <br />
-      <div
-        className={`alert ${
-          status === "Skill verified" ? "alert-success" : "alert-warning"
-        } alert-dismissible fade show`}
-        role="alert"
-      >
-        <strong>{status}</strong>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="alert"
-          aria-label="Close"
-        ></button>
-      </div>
+      {!!status && (
+        <div
+          className={`alert ${
+            status === "Skill added successfully"
+              ? "alert-success"
+              : "alert-warning"
+          } alert-dismissible fade show`}
+          role="alert"
+        >
+          <strong>{status}</strong>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="alert"
+            aria-label="Close"
+          ></button>
+        </div>
+      )}
     </div>
   );
 }
